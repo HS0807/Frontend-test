@@ -92,3 +92,5 @@ re-rendering in finction components we use useRef()
 
 15. What are Error Boundaries in React, and why are they used?
 =>
+
+16.
