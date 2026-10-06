@@ -31,7 +31,10 @@ ex=> const setInterval(()=>{
 },2000)
 
 5. What are some important ES6 features? Name at least 5
-=> 
+=>1) let and const
+2) spread operator
+3) Arrow function
+4)Destructuring 
 
 6. What is the spread operator (...) in JavaScript? Give an example
 => spread operator (...) commonly used for creating new array by containing existing array.
@@ -93,4 +96,3 @@ re-rendering in finction components we use useRef()
 15. What are Error Boundaries in React, and why are they used?
 =>
 
-16.
