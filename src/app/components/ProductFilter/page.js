@@ -12,24 +12,25 @@ export default function ProductFilter() {
         { id: 3, name: "Watch", price: 800 }
     ];
 
+    let productList = products.map((product) => (
+        <div key={product.id}>
+            <h3>name: {product.name} , Price: {product.price} </h3>
+        </div>
+    ))
+
     const filteredProducts = products.filter(p => p.price > 500)
+        .map((product) => (
+            <div key={product.id}>
+                <p>name: {product.name} , price: {product.price}</p>
+            </div>
+        ))
     return (
         <div >
-            {products.map((product) => (
-                <div key={product.id}>
-                    <h3>name: {product.name} , Price: {product.price} </h3>
-                </div>
-            ))}
-            <button className="bg-red-500 hover:bg-red-400 rounded m-5 p-3" onClick={() => setShowProducts(true)}>
+            {productList}
+            <button className="bg-red-500 hover:bg-red-400 rounded m-5 p-3" onClick={() => setShowProducts(!showProducts)}>
                 Show Products Above 500
             </button>
-
-            {showProducts &&
-                filteredProducts.map((product) => (
-                    <div className='' key={product.id}>
-                        <p>name: {product.name} , price: {product.price}</p>
-                    </div>
-                ))}
+            {showProducts && filteredProducts}
         </div>
     )
 }

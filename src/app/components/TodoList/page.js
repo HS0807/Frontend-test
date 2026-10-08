@@ -9,15 +9,15 @@ export default function TodoList() {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        setMyTask([...mytask, { task  }])
+        setMyTask([...mytask, { task }])
         setTask("");
         console.log(mytask)
     }
 
     const deleteHandler = (i) => {
-        let CopyTask = [...mytask]
-        CopyTask.splice(i, 1)
-        setMyTask(CopyTask);
+        let deleteTask = [...mytask]
+        deleteTask.splice(i, 1)
+        setMyTask(deleteTask);
     }
 
     let Addedtsk = mytask.map((t, i) => {
@@ -51,4 +51,4 @@ export default function TodoList() {
 
         </div>
     )
-}
+}   

@@ -5,6 +5,8 @@ import React, { useState } from "react";
 export default function Counter() {
     const [count, setCount] = useState(0);
 
+
+    
     return (
         <div className="text-3xl m-2 p-2">
             <h2 className="flex item-center justify-center">Count: {count}</h2>

@@ -10,8 +10,13 @@ export default function SearchFunctionality() {
         fruit.toLowerCase().includes(search.toLowerCase())
     );
 
+    let searchedfruit = result.map((fruit) => (
+        <p key={fruit}>
+            {fruit}
+        </p>
+    ))
+
     return (
-        <div>
             <div>
                 <input
                     type="text"
@@ -20,11 +25,7 @@ export default function SearchFunctionality() {
                     placeholder="Search fruit"
                     className="m-3 p-2 border"
                 />
-
-                {result.map((fruit) => (
-                    <p key={fruit}>{fruit}</p>
-                ))}
+                {searchedfruit}
             </div>
-        </div>
     );
 }

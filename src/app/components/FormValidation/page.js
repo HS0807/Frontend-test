@@ -1,6 +1,6 @@
 "use client";
-
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 export default function FormValidation() {
     const [email, setEmail] = useState("");
@@ -12,7 +12,6 @@ export default function FormValidation() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         setSubmittedEmail(email);
         setSubmittedPassword(password);
 

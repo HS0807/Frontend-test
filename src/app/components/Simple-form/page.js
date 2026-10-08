@@ -11,8 +11,7 @@ export default function SimpleForm() {
   const [submittedEmail, setSubmittedEmail] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    
+    e.preventDefault(); 
     setSubmittedName(name);
     setSubmittedEmail(email);
   };

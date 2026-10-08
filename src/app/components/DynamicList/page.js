@@ -8,15 +8,24 @@ export default function DynamicList() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     setMySkills([...myskills, { skills }]);
     setSkills("");
   };
 
+  const deleteHandler = (i) => {
+    let deleteSkills = [...myskills]
+    deleteSkills.splice(i,1)
+    setMySkills(deleteSkills);
+  }
+
   let addedskills = myskills.map((s, i) => {
     return (
-      <li key={i}>
+      <li key={i} className="flex items-center justify-between">
+        <div className="font-bold text-3xl m-5">
         <h3>{s.skills}</h3>
+        </div>
+        <button className="bg-red-200 text-white rounded p-2" onClick={() => deleteHandler(i)}>Delete Skills</button>
+
       </li>
     );
   });
@@ -35,9 +44,11 @@ export default function DynamicList() {
         <button className="bg-black text-white p-2 text-2xl rounded m-5">Add Skill</button>
       </form>
 
-      <ul>
+      <div>
+        <h3>my skills :- </h3>
         {addedskills}
-      </ul>
+      </div>
+        
     </div>
   );
 }

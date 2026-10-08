@@ -2,21 +2,22 @@ import React from 'react'
 
 export default function ProductList() {
 
-    const products = [
+  const products = [
     { id: 1, name: "Shirt", price: 500 },
     { id: 2, name: "Shoes", price: 1200 },
-    { id: 3, name: "Watch", price: 800 }
+    { id: 3, name: "Watchs", price: 800 }
   ];
 
-  return (    
+  let productsList = products.map((p) => (
+    <div key={p.id}>
+      <h3>name: {p.name} , Price: {p.price} </h3>
+    </div>
+  ))
+
+  return (
     <div className='m-5'>
-       <div>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h3>name: {product.name} , Price: {product.price} </h3>
-        </div>
-      ))}
+      {productsList}
     </div>
-    </div>
+
   )
 }
